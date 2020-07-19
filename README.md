@@ -6,6 +6,9 @@
 
 # Запускаем одновременно 2 команды с разным приоритетом
 time nice -n -20 su -c "dd if=/dev/zero of=/tmp/test.img bs=2000 count=1M" &  time nice -n 19 su -c "dd if=/dev/zero of=/tmp/test2.img bs=2000 count=1M" &
+sleep 5
+rm -f /tmp/tes*
+exit 0
 ```
 # Результат
 ```
